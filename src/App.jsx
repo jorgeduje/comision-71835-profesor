@@ -1,33 +1,35 @@
 import { useState } from "react";
-import Counter from "./components/common/counter/Counter";
 import Navbar from "./components/layouts/navbar/Navbar";
 import ItemListContainer from "./components/pages/itemListContainer/ItemListContainer";
+import CounterContainer from "./components/common/counter/CounterContainer";
+import CartContainer from "./components/pages/cart/CartContainer";
+import PruebaGrid from "./components/common/pruebaGrid/PruebaGrid";
 
 function App() {
-  const [nombre, setNombre] = useState("pepe");
+  const [montarComponente, setMontarComponente] = useState(false);
+  const montarYdesmontar = () => {
+    setMontarComponente(!montarComponente);
+  };
+  const [saludo, setSaludo] = useState("hola");
 
-  let saludo = "hola como estas";
-
-  const cambiarNombre = () => {
-    if (nombre === "pepe") {
-      setNombre("juan");
+  const cambiarSaludo = () => {
+    if (saludo === "hola") {
+      setSaludo("chau");
     } else {
-      setNombre("pepe");
+      setSaludo("hola");
     }
   };
-
   return (
     <div>
-      <Navbar />
-      {/* <ItemListContainer greeting={saludo} y="2" maria="dasda" /> */}
-      {/* <ItemListContainer {greeting:{saludo} y:"2" maria:"dasda"} />   */}
-      <Counter />
-      <h2>Hola {nombre} </h2>
-      <button onClick={cambiarNombre}>Cambiar nombre</button>
+      {/* <Navbar />
+      {montarComponente ? <ItemListContainer greeting={saludo} /> : null}
+      <button onClick={montarYdesmontar}>Montar/desmontar</button>
+      <button onClick={cambiarSaludo}>Cambiar saludo</button>
+      <CounterContainer />
+      <CartContainer /> */}
+      <PruebaGrid />
     </div>
   );
 }
 
 export default App;
-// props = {greeting:{saludo} y:"2" maria:"dasda"}
-// props.maria
