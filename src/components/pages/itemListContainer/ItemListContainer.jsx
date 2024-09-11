@@ -1,7 +1,4 @@
-import { useState, useEffect } from "react";
-import ProductCard from "../../common/productCard/ProductCard";
-
-const ItemListContainer = ({ greeting }) => {
+const ItemListContainer = () => {
   return (
     <div>
       <h1>Listado de productos</h1>
