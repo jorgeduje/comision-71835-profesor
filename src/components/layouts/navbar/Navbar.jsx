@@ -7,7 +7,7 @@ const Navbar = () => {
     setDarkMode(!darkMode);
   };
   return (
-    <div className={darkMode ? "container-nav-dark" : "container-nav"}>
+    <div className={"container-nav"}>
       {/* logo o el nombre de la empresa  */}
       <h3>Comision-71835</h3>
       {/* al medio un listado de categorias clickeables */}
@@ -16,7 +16,6 @@ const Navbar = () => {
         <li>Urbanas</li>
         <li>Deportivas</li>
       </ul>
-      <button onClick={tooggleMode}>cambiar modo</button>
       <CartWidget />
     </div>
   );

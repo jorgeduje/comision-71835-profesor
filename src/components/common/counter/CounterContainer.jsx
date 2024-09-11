@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import Counter from "./Counter";
 
 const CounterContainer = () => {
-  console.log("me ejecuto");
-  // ESTADOS
-  const [contador, setContador] = useState(10); // x = [ variable , funcion que hace cambiar esa variable ]
+  const [contador, setContador] = useState(10);
 
   const sumar = () => {
     setContador(contador + 1);
