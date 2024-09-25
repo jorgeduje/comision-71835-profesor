@@ -10,7 +10,7 @@ import "./productCard.css";
 
 const ProductCard = ({ title, price, imageUrl, description }) => {
   return (
-    <Card sx={{ width: 350, height: 300 }}>
+    <Card sx={{ width: 350, height: 320 }}>
       <CardMedia sx={{ height: 140 }} image={imageUrl} title="green iguana" />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
@@ -24,7 +24,9 @@ const ProductCard = ({ title, price, imageUrl, description }) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Ver detalle</Button>
+        <Button variant="outlined" size="small">
+          Ver detalle
+        </Button>
       </CardActions>
     </Card>
   );
