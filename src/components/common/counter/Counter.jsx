@@ -11,7 +11,14 @@ const Counter = ({ contador, sumar, restar }) => {
         Restar
       </Button>
 
-      <Button variant="outlined">Agregar al carrito</Button>
+      <Button
+        variant="outlined"
+        onClick={() => {
+          console.log("se agrego al carrito");
+        }}
+      >
+        Agregar al carrito
+      </Button>
     </div>
   );
 };

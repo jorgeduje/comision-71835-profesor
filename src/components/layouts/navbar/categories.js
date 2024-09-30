@@ -1,5 +1,5 @@
 export const categories = [
-  { title: "Todas" },
-  { title: "Urbanas" },
-  { title: "Deportivas" },
+  { title: "Todas", path: "/" },
+  { title: "Urbanas", path: "/category/urbanas" },
+  { title: "Deportivas", path: "/category/deportivas" },
 ];

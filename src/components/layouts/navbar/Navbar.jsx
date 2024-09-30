@@ -2,6 +2,9 @@ import { useState } from "react";
 import CartWidget from "../../common/cartWidget/CartWidget";
 import "./navbar.css";
 import { categories } from "./categories";
+
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
   const [darkMode, setDarkMode] = useState(true);
   const tooggleMode = () => {
@@ -11,14 +14,19 @@ const Navbar = () => {
   return (
     <div className={"container-nav"}>
       {/* logo o el nombre de la empresa  */}
-      <h3>Comision-71835</h3>
+      <Link to="/">Comision-71835</Link>
       {/* al medio un listado de categorias clickeables */}
       <ul>
-        {categories.map((category) => (
-          <li key={category.title}>{category.title}</li>
+        {categories.map(({ title, path }) => (
+          <Link key={title} to={path}>
+            {title}
+          </Link>
         ))}
       </ul>
-      <CartWidget />
+
+      <Link to="/cart">
+        <CartWidget />
+      </Link>
     </div>
   );
 };
