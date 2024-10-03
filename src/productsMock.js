@@ -6,14 +6,14 @@ export const products = [
     description: "estas son las mejores",
     imageUrl:
       "https://res.cloudinary.com/dnqfh2chg/image/upload/v1686581567/images_teykwq.jpg",
-    stock: 12,
+    stock: 4,
     category: "deportivas",
   },
   {
     id: "2",
     title: "wilson advance",
     price: 14500,
-    stock: 5,
+    stock: 7,
     description: "Ultra livianas y cuentan con camara de aire",
     category: "deportivas",
     imageUrl:

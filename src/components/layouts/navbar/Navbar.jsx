@@ -24,6 +24,8 @@ const Navbar = () => {
         ))}
       </ul>
 
+      <Link to="/eventos">Eventos</Link>
+
       <Link to="/cart">
         <CartWidget />
       </Link>

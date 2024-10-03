@@ -20,7 +20,11 @@ const ItemDetailContainer = () => {
     // navigate("/cart");
   }, [id]);
 
-  return <ItemDetail item={item} />;
+  const onAdd = (quantity) => {
+    let productoParaElCarrito = { ...item, quantity };
+  };
+
+  return <ItemDetail item={item} onAdd={onAdd} />;
 };
 
 export default ItemDetailContainer;
