@@ -3,6 +3,7 @@ import ItemListContainer from "./components/pages/itemListContainer/ItemListCont
 import CartContainer from "./components/pages/cart/CartContainer";
 import Navbar from "./components/layouts/navbar/Navbar";
 import ItemDetailContainer from "./components/pages/itemDetail/ItemDetailContainer";
+import Eventos from "./components/pages/eventos/Eventos";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
 
         <Route path={"/productDetail/:id"} element={<ItemDetailContainer />} />
 
+        <Route path={"/eventos"} element={<Eventos />} />
         <Route path="*" element={<h2>404 not found</h2>} />
       </Routes>
     </BrowserRouter>
