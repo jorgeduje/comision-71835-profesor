@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 import { products } from "../../../productsMock";
 import { useParams, useNavigate } from "react-router-dom";
+import { CartContext } from "../../../context/CartContext";
 
 const ItemDetailContainer = () => {
   // hook --> recuperar la parte dinamica de la ruta
   const [item, setItem] = useState({});
+  const { addToCart } = useContext(CartContext);
 
   const { id } = useParams(); // devuelve un objeto {}
 
@@ -22,6 +24,7 @@ const ItemDetailContainer = () => {
 
   const onAdd = (quantity) => {
     let productoParaElCarrito = { ...item, quantity };
+    addToCart(productoParaElCarrito);
   };
 
   return <ItemDetail item={item} onAdd={onAdd} />;
