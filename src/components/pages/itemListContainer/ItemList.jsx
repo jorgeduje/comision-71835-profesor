@@ -1,3 +1,4 @@
+import CajaPadre from "../../common/CajaPadre";
 import ProductCard from "../../common/productCard/ProductCard";
 
 const ItemList = ({ items }) => {
@@ -15,6 +16,15 @@ const ItemList = ({ items }) => {
       {items.map((item) => {
         return <ProductCard key={item.id} {...item} />;
       })}
+      {/* <CajaPadre>
+        <h4>primer elemento</h4>
+        <h4>segundo elemento</h4>
+        <h4>tercer elemento</h4>
+        <button>sumar</button>
+      </CajaPadre>
+      <CajaPadre>
+        <h5>Hola</h5>
+      </CajaPadre> */}
     </div>
   );
 };

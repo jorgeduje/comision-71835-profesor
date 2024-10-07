@@ -7,7 +7,7 @@ const ItemListContainer = () => {
   const [items, setItems] = useState([]); // undefined.title
 
   const { categoryName } = useParams(); // {} -- { categoryName }
-  console.log(categoryName);
+
   // va ser falsy cuando este en home --> todos los productos
   // va ser truthy cuando estemos en una category ---> parte de los productos
 
