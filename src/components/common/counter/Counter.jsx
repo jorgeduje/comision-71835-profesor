@@ -2,7 +2,7 @@ import { Button } from "@mui/material";
 
 const Counter = ({ contador, sumar, restar, onAdd }) => {
   return (
-    <div>
+    <div style={{ marginLeft: "50px" }}>
       <Button variant="contained" onClick={sumar}>
         Sumar
       </Button>

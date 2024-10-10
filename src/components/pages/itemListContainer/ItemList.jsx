@@ -1,7 +1,27 @@
-import CajaPadre from "../../common/CajaPadre";
+import { Skeleton } from "@mui/material";
 import ProductCard from "../../common/productCard/ProductCard";
 
 const ItemList = ({ items }) => {
+  // if con return temprano
+  // ternario
+  // operador and &&
+
+  if (items.length === 0) {
+    return (
+      <>
+        <Skeleton variant="rectangular" width={"300px"} height={"150px"} />
+        <Skeleton variant="text" sx={{ fontSize: "4rem" }} width={"200px"} />
+        <Skeleton variant="text" sx={{ fontSize: "2rem" }} width={"150px"} />
+        <Skeleton variant="text" sx={{ fontSize: "2rem" }} width={"100px"} />
+        <Skeleton
+          variant="rounded"
+          sx={{ fontSize: "2rem", borderRadius: "50px" }}
+          width={"100px"}
+        />
+      </>
+    );
+  }
+
   return (
     <div
       style={{
@@ -13,18 +33,16 @@ const ItemList = ({ items }) => {
         marginTop: "50px",
       }}
     >
+      {/* {items.length > 0 ? (
+        items.map((item) => {
+          return <ProductCard key={item.id} {...item} />;
+        })
+      ) : (
+        <h1>Cargando....</h1>
+      )} */}
       {items.map((item) => {
         return <ProductCard key={item.id} {...item} />;
       })}
-      {/* <CajaPadre>
-        <h4>primer elemento</h4>
-        <h4>segundo elemento</h4>
-        <h4>tercer elemento</h4>
-        <button>sumar</button>
-      </CajaPadre>
-      <CajaPadre>
-        <h5>Hola</h5>
-      </CajaPadre> */}
     </div>
   );
 };
