@@ -4,10 +4,19 @@ import CartContainer from "./components/pages/cart/CartContainer";
 import Navbar from "./components/layouts/navbar/Navbar";
 import ItemDetailContainer from "./components/pages/itemDetail/ItemDetailContainer";
 import { CartContextProvider } from "./context/CartContext";
+import { Toaster } from "sonner";
 
 function App() {
   return (
     <BrowserRouter>
+      <Toaster
+        richColors
+        toastOptions={{
+          duration: 2000,
+        }}
+        expand
+        // expand={false}
+      />
       <CartContextProvider>
         <Navbar />
         <Routes>
