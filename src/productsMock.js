@@ -1,6 +1,5 @@
 export const products = [
   {
-    id: "1",
     title: "zapatila nike",
     price: 12432,
     description: "estas son las mejores",
@@ -10,7 +9,6 @@ export const products = [
     category: "deportivas",
   },
   {
-    id: "2",
     title: "wilson advance",
     price: 14500,
     stock: 7,
@@ -20,7 +18,6 @@ export const products = [
       "https://res.cloudinary.com/dnqfh2chg/image/upload/v1669430010/foc364fsakkzmausrovn.jpg",
   },
   {
-    id: "3",
     title: "Puma",
     price: 19000,
     stock: 5,
@@ -31,7 +28,6 @@ export const products = [
       "https://res.cloudinary.com/dnqfh2chg/image/upload/v1669430165/images_lujpmr.jpg",
   },
   {
-    id: "4",
     title: "Jaguar",
     price: 17800,
     stock: 5,
