@@ -2,49 +2,37 @@ import { useState, useEffect } from "react";
 import { products } from "../../../productsMock";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
+import { db } from "../../../firebaseConfig";
+import { addDoc, collection, getDocs, query, where } from "firebase/firestore";
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]); // undefined.title
 
   const { categoryName } = useParams(); // {} -- { categoryName }
 
-  // va ser falsy cuando este en home --> todos los productos
-  // va ser truthy cuando estemos en una category ---> parte de los productos
-
   useEffect(() => {
-    const filteredProducts = products.filter(
-      (product) => product.category === categoryName
-    );
-    const getProducts = new Promise((res, rej) => {
-      let isLogued = true;
-      if (isLogued) {
-        res(categoryName ? filteredProducts : products);
-      } else {
-        rej({ message: "algo salio mal" });
-      }
-    });
+    let productsCollection = collection(db, "products");
 
-    getProducts
-      .then((response) => {
-        setTimeout(() => {
-          setItems(response);
-        }, 1000);
-      })
-      .catch((error) => {
-        console.log("entro en el catch ", error);
+    let consulta = productsCollection; // el va saber a quien pedirle los documentos si a todos o a una parte
+
+    if (categoryName) {
+      let productsCollectionFiltered = query(
+        productsCollection,
+        where("category", "==", categoryName)
+      );
+      consulta = productsCollectionFiltered;
+    }
+
+    getDocs(consulta).then((res) => {
+      let array = res.docs.map((elemento) => {
+        return { ...elemento.data(), id: elemento.id };
       });
+
+      setItems(array);
+    });
   }, [categoryName]);
 
   return <ItemList items={items} />;
 };
 
 export default ItemListContainer;
-
-// const sumar = ( a )=>{
-//   let pepe = "dsad"
-
-// }
-
-// console.log( pepe )
-
-// console.log( a )
