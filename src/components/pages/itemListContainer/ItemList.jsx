@@ -33,13 +33,6 @@ const ItemList = ({ items }) => {
         marginTop: "50px",
       }}
     >
-      {/* {items.length > 0 ? (
-        items.map((item) => {
-          return <ProductCard key={item.id} {...item} />;
-        })
-      ) : (
-        <h1>Cargando....</h1>
-      )} */}
       {items.map((item) => {
         return <ProductCard key={item.id} {...item} />;
       })}

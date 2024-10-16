@@ -5,6 +5,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import { CartContext } from "../../../context/CartContext";
 import Swal from "sweetalert2";
 import { toast } from "sonner";
+import { collection, doc, getDoc } from "firebase/firestore";
+import { db } from "../../../firebaseConfig";
 
 const ItemDetailContainer = () => {
   // hook --> recuperar la parte dinamica de la ruta
@@ -18,24 +20,17 @@ const ItemDetailContainer = () => {
   // const navigate = useNavigate();
 
   useEffect(() => {
-    let product = products.find((product) => product.id === id);
-    if (product) {
-      setItem(product);
-    }
-
-    // navigate("/cart");
+    let productsCollection = collection(db, "products");
+    let refDoc = doc(productsCollection, id);
+    getDoc(refDoc).then((res) => {
+      setItem({ ...res.data(), id: res.id });
+    });
   }, [id]);
 
   const onAdd = (quantity) => {
     let productoParaElCarrito = { ...item, quantity };
     addToCart(productoParaElCarrito);
-    // Swal.fire({
-    //   position: "center",
-    //   icon: "success",
-    //   title: "Se agrego al carrito",
-    //   showConfirmButton: true,
-    //   // timer: 1500,
-    // });
+
     toast.success("Se agrego el producto", {
       closeButton: true,
       description: "algo mas",

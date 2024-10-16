@@ -10,6 +10,7 @@ import "./productCard.css";
 import { Link } from "react-router-dom";
 
 const ProductCard = ({ title, price, imageUrl, description, id }) => {
+  console.log(title);
   return (
     <Card sx={{ width: 350, height: 320 }}>
       <CardMedia sx={{ height: 140 }} image={imageUrl} title="green iguana" />
