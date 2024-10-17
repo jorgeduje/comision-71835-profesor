@@ -32,7 +32,18 @@ const ItemListContainer = () => {
     });
   }, [categoryName]);
 
-  return <ItemList items={items} />;
+  // const agregarProductos = () => {
+  //   products.forEach((producto) => {
+  //     addDoc(collection(db, "products"), producto);
+  //   });
+  // };
+
+  return (
+    <>
+      <ItemList items={items} />
+      {/* <button onClick={agregarProductos}>Agregar</button> */}
+    </>
+  );
 };
 
 export default ItemListContainer;

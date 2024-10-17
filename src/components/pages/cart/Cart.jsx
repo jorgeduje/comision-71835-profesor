@@ -1,5 +1,6 @@
 import { Button } from "@mui/material";
 import React from "react";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Cart = ({ cart, clearCart, deleteProductById, total }) => {
@@ -55,13 +56,20 @@ const Cart = ({ cart, clearCart, deleteProductById, total }) => {
       })}
 
       {total > 0 && (
-        <Button
-          sx={{ marginTop: 20 }}
-          variant="contained"
-          onClick={limpiarConAlert}
-        >
-          Limpiar carrito
-        </Button>
+        <>
+          <Button
+            sx={{ marginTop: 20 }}
+            variant="contained"
+            onClick={limpiarConAlert}
+          >
+            Limpiar carrito
+          </Button>
+          <Link to="/checkout">
+            <Button sx={{ marginTop: 20 }} variant="contained">
+              Finalizar compra
+            </Button>
+          </Link>
+        </>
       )}
 
       {total > 0 ? (
