@@ -50,9 +50,7 @@ const Checkout = () => {
         setOrderId(res.id);
         clearCart();
       })
-      .catch((error) => {
-        console.log(error);
-      })
+      .catch((error) => {})
       .finally(() => {
         setIsLoading(false);
       });

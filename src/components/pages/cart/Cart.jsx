@@ -16,7 +16,6 @@ const Cart = ({ cart, clearCart, deleteProductById, total }) => {
       confirmButtonText: "Si, limpiar",
       denyButtonText: `No, dejar como estaba`,
     }).then((result) => {
-      console.log(result);
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
         clearCart();
